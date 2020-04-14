@@ -13,3 +13,10 @@ after_success:
   - docker build -t msintaha/multi-server ./server
   - docker build -t msintaha/multi-worker ./worker
   - docker build -t msintaha/multi-nginx ./nginx
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  - docker push msintaha/multi-client
+  - docker push msintaha/multi-server
+  - docker push msintaha/multi-worker
+  - docker push msintaha/multi-nginx
