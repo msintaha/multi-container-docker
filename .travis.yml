@@ -20,3 +20,16 @@ after_success:
   - docker push msintaha/multi-server
   - docker push msintaha/multi-worker
   - docker push msintaha/multi-nginx
+
+# deploy:
+#   edge: true
+#   provider: elasticbeanstalk
+#   region: us-east-1
+#   app: multi-docker
+#   env: MultiDocker-env
+#   bucker_name: <bucket_name>
+#   bucket_path: docker-multi
+#   on:
+#     branch: master
+# access_key_id: $AWS_ACCESS_KEY # Stored in your travis-ci env variables
+# secret_access_key: $AWS_SECRET_KEY # Stored in your travis-ci env variables
